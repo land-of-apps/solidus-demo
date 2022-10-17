@@ -1,7 +1,9 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.6.6'
+ruby '2.7.3'
+
+gem 'appmap', group: %i[test development]
 
 gem 'rails', '~> 6.1'
 # Use pg as the database for Active Record
@@ -22,6 +24,7 @@ gem 'solidus_sample'
 gem "solidus_starter_frontend", git: 'https://github.com/nebulab/solidus_starter_frontend'
 gem "solidus_user_guides", git: 'https://github.com/seand7565/solidus_user_guides'
 gem "solidus_paypal_commerce_platform", git: 'https://github.com/nebulab/solidus_paypal_commerce_platform'
+gem "solidus_stripe", git: 'https://github.com/solidusio/solidus_stripe'
 gem "solidus_graphql_api", git: 'https://github.com/solidusio-contrib/solidus_graphql_api'
 
 group :heroku do

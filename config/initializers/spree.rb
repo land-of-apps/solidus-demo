@@ -22,7 +22,6 @@ Spree.config do |config|
   config.image_attachment_module = 'Spree::Image::PaperclipAttachment'
   config.taxon_attachment_module = 'Spree::Taxon::PaperclipAttachment'
 
-
   # Permission Sets:
 
   # Uncomment and customize the following line to add custom permission sets
@@ -33,7 +32,7 @@ Spree.config do |config|
   # Frontend:
 
   # Custom logo for the frontend
-  # config.logo = "logo/solidus.svg"
+  config.logo = 'merch-app-logo.png'
 
   # Template to use when rendering layout
   # config.layout = "spree/layouts/spree_application"
@@ -42,7 +41,7 @@ Spree.config do |config|
   # Admin:
 
   # Custom logo for the admin
-  # config.admin_interface_logo = "logo/solidus.svg"
+  config.admin_interface_logo = 'merch-app-logo.png'
 
   # Gateway credentials can be configured statically here and referenced from
   # the admin. They can also be fully configured from the admin.
@@ -50,14 +49,17 @@ Spree.config do |config|
   # Please note that you need to use the solidus_stripe gem to have
   # Stripe working: https://github.com/solidusio-contrib/solidus_stripe
   #
-  # config.static_model_preferences.add(
-  #   Spree::PaymentMethod::StripeCreditCard,
-  #   'stripe_env_credentials',
-  #   secret_key: ENV['STRIPE_SECRET_KEY'],
-  #   publishable_key: ENV['STRIPE_PUBLISHABLE_KEY'],
-  #   server: Rails.env.production? ? 'production' : 'test',
-  #   test_mode: !Rails.env.production?
-  # )
+  config.static_model_preferences.add(
+    Spree::PaymentMethod::StripeCreditCard,
+    'stripe_env_credentials',
+    secret_key: ENV['STRIPE_SECRET_KEY'],
+    publishable_key: ENV['STRIPE_PUBLISHABLE_KEY'],
+    server: Rails.env.production? ? 'production' : 'test',
+    test_mode: !Rails.env.production?,
+    stripe_country: 'US',
+    v3_elements: false,
+    v3_intents: false
+  )
 end
 
 SolidusStarterFrontend::Config.configure do |config|
