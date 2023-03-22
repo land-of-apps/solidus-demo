@@ -1,15 +1,4 @@
 GIT
-  remote: https://github.com/getappmap/appmap-ruby.git
-  revision: d181ea88763001e84577faf8764f4d0b22f08911
-  branch: master
-  specs:
-    appmap (0.93.3)
-      activesupport
-      method_source
-      rack
-      reverse_markdown
-
-GIT
   remote: https://github.com/nebulab/solidus_paypal_commerce_platform
   revision: 1e3a3a4cee32f278310688e0f42dff129f2f3ea5
   specs:
@@ -134,6 +123,11 @@ GEM
     apparition (0.6.0)
       capybara (~> 3.13, < 4)
       websocket-driver (>= 0.6.5)
+    appmap (0.98.1)
+      activesupport
+      method_source
+      rack
+      reverse_markdown
     autoprefixer-rails (10.3.1.0)
       execjs (~> 2)
     awesome_nested_set (3.4.0)
@@ -485,7 +479,7 @@ PLATFORMS
 
 DEPENDENCIES
   apparition
-  appmap!
+  appmap
   binding_of_caller
   bootsnap (>= 1.1.0)
   bootstrap (~> 4.4.1)
