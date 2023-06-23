@@ -9,6 +9,7 @@ After cloning the repo, `cd` into the folder and run the following commands:
 ```
 bundle install
 yarn install
+brew install imagemagick
 rails db:create db:migrate db:seed
 rails sample_records:appmap
 ```
